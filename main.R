@@ -7,3 +7,7 @@ library(dbplyr) # a CRAN package, but we need the dev GitHub version
 if (packageVersion("rlang") != "1.0.6") {
   stop("Please install rlang version `1.0.6`")
 }
+
+if (!packageVersion("dbplyr") > pkgsearch::cran_package("dbplyr")$Version) {
+  stop("Please install the dev version of dbplyr")
+}
